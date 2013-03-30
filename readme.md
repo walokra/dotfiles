@@ -7,17 +7,17 @@ Based on [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles/).
 ## Overview of files
 
 ####  Automatic config
-	* `.vimrc`, `.vim` - vim config, obv.
+* `.vimrc`, `.vim` - vim config, obv.
 
-#### shell environement
-	* `.aliases`
-	* `.bash_profile`
-	* `.bash_prompt`
-	* `.bashrc`
-	* `.exports`
-	* `.functions`
-	* `.extra` - not included, for  private config which you do not commit to this repo
-	* `.inputrc` - config for bash readline
+#### shell environment
+* `.aliases`
+* `.bash_profile`
+* `.bash_prompt`
+* `.bashrc`
+* `.exports`
+* `.functions`
+* `.extra` - not included, for  private config which you do not commit to this repo
+* `.inputrc` - config for bash readline
 
 ## Installation
 
