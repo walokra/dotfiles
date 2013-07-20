@@ -125,11 +125,6 @@ set ruler                       "nu:    Show the cursor position
 "set showtabline=2               " Always show tab bar.
 set title                       " Show the filename in the window titlebar.
 set cursorline                  " Highlight current line
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
 
 " Status Line
 " hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
