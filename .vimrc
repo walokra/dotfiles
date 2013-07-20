@@ -1,10 +1,14 @@
 " .vimrc
 
 " Make vim more useful 
-set nocompatible "cp:    turns off strct vi compatibility
-set vb           "turn on the "visual bell" - which is much quieter than the "audio blink"
-set noerrorbells " Disable error bells.
-set nostartofline  " Don’t reset cursor to start of line when moving around.
+set nocompatible 	"cp:    turns off strct vi compatibility
+set vb           	" Turn on the "visual bell" - which is much quieter than the "audio blink"
+set noerrorbells 	" Disable error bells.
+set nostartofline  	" Don’t reset cursor to start of line when moving around.
+
+" autoload plugins
+"call pathogen#infect()
+"filetype plugin indent on
 
 " Colors
 set background=dark
@@ -202,7 +206,9 @@ nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 nnoremap <silent><F5> :set hlsearch!<CR>
 
 " tap F3 to toggle line numbers
-nnoremap <silent><F3> :set number!<CR>
+"nnoremap <silent><F3> :set number!<CR>
+" tap Ctrl-L to toggle line numbers
+nnoremap <C-L> :set number!<CR>
 
 " rewrap
 map q gq}
@@ -219,4 +225,7 @@ map ,t    :.!timestamp^M
 :imap <C-tab> <ESC>:tabnext<cr>i
 :nmap <C-t> :tabnew<cr>
 :imap <C-t> <ESC>:tabnew<cr>
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
