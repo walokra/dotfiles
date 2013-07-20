@@ -4,16 +4,58 @@
 set nocompatible "cp:    turns off strct vi compatibility
 set vb           "turn on the "visual bell" - which is much quieter than the "audio blink"
 set noerrorbells " Disable error bells.
-set background=dark
+set nostartofline  " Don’t reset cursor to start of line when moving around.
 
+" Colors
+set background=dark
 colorscheme badwolf
 "colorscheme darkburn
 "colorscheme molokai
-
 set t_Co=256
+
+" Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set clipboard=unnamed
+
+" Menu completion
+set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
+"wmnu: Hitting TAB in command mode will show possible completions above command line.
+set wildmenu
+set wildmode=list:longest " Complete only until point of ambiguity.
+"set wildmode=longest:full,list:full  "wim:   helps wildmenu auto-completion
+
+set esckeys                     " Allow cursor keys in insert mode.
+
+" Backspace and wrapping
+set backspace=indent,eol,start  "bs:    allows you to backspace over the listed character types
+set linebreak                   "lbr:   causes vim to not wrap text in the middle of a word
+set nowrap                      " defaults to line nowrap, ctrl-p toggles
+nmap <silent> <C-P> :set nowrap!<CR>:set nowrap?<CR>
 
 " Change mapleader
 let mapleader=","
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+set undodir=~/.vim/undo
+endif
+
+" Respect modeline in files
+set modeline
+set modelines=4
+" Enable per-directory .vimrc files and disable unsafe commands in them
+set exrc
+set secure
 
 " Tabs and indenting
 set autoindent                  " Copy indent from last line when starting new line.
@@ -22,12 +64,6 @@ set autoindent                  " Copy indent from last line when starting new l
 set tabstop=4                   "ts:    number of spaces that a tab counts  for
 set shiftwidth=4                "sw:    number of spaces to use for autoindent
 "set ai                         " set auto-indenting on for programming
-
-" Backspace and wrapping
-set backspace=indent,eol,start  "bs:    allows you to backspace over the listed character types
-set linebreak                   "lbr:   causes vim to not wrap text in the middle of a word
-set nowrap                      " defaults to line nowrap, ctrl-p toggles
-nmap <silent> <C-P> :set nowrap!<CR>:set nowrap?<CR>
 
 " Programming
 so $VIMRUNTIME/syntax/syntax.vim "load syntax files
@@ -39,12 +75,20 @@ set matchtime=3
 set listchars=tab:>-,eol:$      "lcs:   makes finding tabs easier during `set list`
 " do NOT put a carriage return at the end of the last line! if you are programming
 " for the web the default will cause http headers to be sent. that's bad.
-set binary noeol
+set binary 
+set noeol
+
+" Automatic commands
+if has("autocmd")
+	" Enable file type detection
+	filetype on
+	" Treat .json files as .js
+	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+endif
 
 set diffopt=filler              " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite             " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb       " BOM often causes trouble
-set esckeys                     " Allow cursor keys in insert mode.
 
 " Folding. zi toggles, spacebar expands
 "set foldcolumn=4 " Column to show folds
@@ -76,11 +120,16 @@ set scrolloff=3                 "so:    places a couple lines between the curren
 set sidescrolloff=2             "siso:  places a couple lines between the current column and the screen edge
 set laststatus=2                "ls:    makes the status bar always visible
 set ttyfast                     "tf:    improves redrawing for newer computers
-"set nu                          " Enable line numbers.
+set number                      "nu: 	Enable line numbers.
 set ruler                       "nu:    Show the cursor position
 "set showtabline=2               " Always show tab bar.
-"set title                       " Show the filename in the window titlebar.
+set title                       " Show the filename in the window titlebar.
 set cursorline                  " Highlight current line
+" Use relative line numbers
+if exists("&relativenumber")
+	set relativenumber
+	au BufReadPost * set relativenumber
+endif
 
 " Status Line
 " hi User1 guibg=#455354 guifg=fg      ctermbg=238 ctermfg=fg  gui=bold,underline cterm=bold,underline term=bold,underline
@@ -101,13 +150,6 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-" Menu completion
-set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
-set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
-set wildmenu              "wmnu: Hitting TAB in command mode will show possible completions above command line.
-set wildmode=list:longest " Complete only until point of ambiguity.
-"set wildmode=longest:full,list:full  "wim:   helps wildmenu auto-completion
 
 " Mappings
 " Speed up viewport scrolling

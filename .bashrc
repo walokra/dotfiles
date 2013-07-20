@@ -1,9 +1,9 @@
 # .bashrc
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+#if [ -f /etc/bashrc ]; then
+#	. /etc/bashrc
+#fi
 
 # User specific aliases and functions
 
@@ -17,6 +17,5 @@ fi
 
 # source settings from .bash_profile
 # Why source from .bashrc: https://github.com/janmoesen/tilde/blob/master/.bashrc
-# Dotfiles based on https://github.com/paulirish/dotfiles
 [ -n "$PS1" ] && source ~/.bash_profile
 

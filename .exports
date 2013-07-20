@@ -1,35 +1,36 @@
 # Make vim the default editor
 export EDITOR="vim"
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
-
-# Color man pages:
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'                           
-export LESS_TERMCAP_so=$'\E[01;44;33m'  #infoBox                                 
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Prefer US English and use UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Always enable colored `grep` output
+export GREP_OPTIONS="--color=auto"
+
+#
+# Additions 
+#
+# Finnish!
+export LC_CTYPE="fi_FI.UTF-8"
+export LC_TIME="fi_FI.UTF-8"
+export LESSCHARSET="utf-8"
 
 # timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
 # saved for later analysis
 HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
-
-# Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
-
-# Work-around incomplete terminfo databases                                     
-# http://www.robmeerman.co.uk/unix/256colours
-# Particulalry useful when under `screen`, which may or may not be attached to 
-# a physical terminal capable of 256color mode. 
-#if [ ! -z "$TERMCAP" ] && [ "$TERM" == "screen" ]; then  
-#    export TERMCAP=$(echo $TERMCAP | sed -e 's/Co#8/Co#256/g')
-#fi
 

@@ -1,3 +1,10 @@
+# Disable the startup message
+startup_message off
+
+#
+# Additions
+#
+
 hardstatus ignore
 # for scrolling
 termcapinfo xterm* ti@:te@
