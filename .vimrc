@@ -124,7 +124,7 @@ set scrolloff=3                 "so:    places a couple lines between the curren
 set sidescrolloff=2             "siso:  places a couple lines between the current column and the screen edge
 set laststatus=2                "ls:    makes the status bar always visible
 set ttyfast                     "tf:    improves redrawing for newer computers
-set number                      "nu: 	Enable line numbers.
+"set number                      "nu: 	Enable line numbers.
 set ruler                       "nu:    Show the cursor position
 "set showtabline=2               " Always show tab bar.
 set title                       " Show the filename in the window titlebar.
@@ -228,4 +228,7 @@ map ,t    :.!timestamp^M
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" statusline fix
+hi statusline ctermbg=Black
 
