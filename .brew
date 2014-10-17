@@ -18,8 +18,19 @@ brew install bash
 brew install wget --enable-iri
 
 # Install other useful binaries
-brew install git
 brew install lynx
+brew install imagemagick
+
+# dev tools
+brew install git
+brew install maven
+brew install gnupg
+brew install gradle
+brew install node
+#brew install postgresql
+
+# YLE Areena
+brew install yle-dl
 
 # ffmpeg
 brew install ffmpeg --with-fdk-aac --with-freetype --with-libvo-aacenc --with-libvorbis --with-libvpx --with-openjpeg --with-rtmpdump --with-theora --with-tools

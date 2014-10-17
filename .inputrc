@@ -43,15 +43,6 @@ set convert-meta off
 # Additions
 #
 
-# Immediately show all possible completions
-set show-all-if-ambiguous on
-
-# If there are more than 200 possible completions for a word, ask to show them all
-set completion-query-items 200
-
-# Use Alt/Meta + Delete to delete the preceding word
-"\e[3;3~": kill-word
- 
 # allow the use of the Home/End keys
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
