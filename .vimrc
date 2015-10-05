@@ -50,6 +50,9 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
+" Don’t create backups when editing files in certain directories
+set backupskip=/tmp/*,/private/tmp/*
+
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
