@@ -12,9 +12,12 @@ set nostartofline  	" Don’t reset cursor to start of line when moving around.
 
 " Colors
 set background=dark
-colorscheme badwolf
+"colorscheme badwolf
 "colorscheme darkburn
 "colorscheme molokai
+colorscheme solarized
+let g:solarized_termtrans=1
+
 set t_Co=256
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
