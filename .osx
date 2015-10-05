@@ -545,7 +545,7 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
+for app in "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "cfprefsd" \
 	"Mail" "Safari" "SizeUp" "SystemUIServer" "Terminal" \
 	"iTunes"; do
 	killall "${app}" > /dev/null 2>&1
