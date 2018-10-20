@@ -117,3 +117,8 @@ alias fs="stat -f \"%z bytes\""
 alias duh='du -h --max-depth=1 $1'
 alias df='df -h'
 
+# Smarter CLI
+alias cat='bat'
+alias ping='prettyping --nolegend'
+alias help='tldr'
+
