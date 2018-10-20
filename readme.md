@@ -51,12 +51,12 @@ export PATH="$HOME/utils:$PATH"
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-### Sensible OS X defaults
+### Sensible macOS defaults
 
-When setting up a new Mac, you may want to set some sensible OS X defaults:
+When setting up a new Mac, you may want to set some sensible macOS defaults:
 
 ```bash
-./.osx
+./.macos
 ```
 
 ## Thanks to…
