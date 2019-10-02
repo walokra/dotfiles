@@ -24,13 +24,13 @@ fi
 alias ls='ls $LS_OPTIONS'
 
 # List all files colorized in long format
-alias l="ls -l ${colorflag}"
+alias l="ls -lF ${colorflag}"
 
 # List all files colorized in long format, excluding . and ..
 alias la="ls -lAF ${colorflag}"
 
 # List only directories
-alias lsd='ls -l ${colorflag} | grep "^d"'
+alias lsd='ls -lF ${colorflag} | grep "^d"'
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
