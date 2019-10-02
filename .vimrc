@@ -57,9 +57,9 @@ set exrc
 set secure
 " Make tabs as wide as two spaces
 set tabstop=2
-" Show “invisible” characters
+" Show “invisible” characters, makes finding tabs easier during `set list`
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+"set list
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
@@ -68,20 +68,14 @@ set noerrorbells
 set nostartofline
 " Don’t show the intro message when starting Vim
 set shortmess=atI
-" Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
 
 " Programming
 so $VIMRUNTIME/syntax/syntax.vim "load syntax files
 syntax on                       "syn:   syntax highlighting
 "set cindent                     "cin:   enables automatic indenting c-style
 "set cinoptions=(0,l1,j1         "cino:  affects the way cindent reindents lines
-"set showmatch                   "sm:    flashes matching brackets or parenthasis
-"set matchtime=3
-"set listchars=tab:>-,eol:$      "lcs:   makes finding tabs easier during `set list`
+set showmatch                   "sm:    flashes matching brackets or parenthasis
+set matchtime=3
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -112,7 +106,7 @@ set scrolloff=3                 "so:    places a couple lines between the curren
 set sidescrolloff=2             "siso:  places a couple lines between the current column and the screen edge
 set laststatus=2                "ls:    makes the status bar always visible
 set ttyfast                     "tf:    improves redrawing for newer computers
-set number                      "nu: 	Enable line numbers.
+"set number                      "nu: 	Enable line numbers.
 set ruler                       "nu:    Show the cursor position
 "set showtabline=2               " Always show tab bar.
 set title                       " Show the filename in the window titlebar.
@@ -125,7 +119,7 @@ set cursorline                  " Highlight current line
 "let g:Powerline_symbols = 'fancy'
 
 " statusline fix
-"hi statusline ctermbg=Black
+hi statusline ctermbg=Black
 
 "set guioptions=grLt
 
@@ -161,3 +155,4 @@ nnoremap <silent><F5> :set hlsearch!<CR>
 "nnoremap <silent><F3> :set number!<CR>
 " tap Ctrl-L to toggle line numbers
 nnoremap <C-L> :set number!<CR>
+
