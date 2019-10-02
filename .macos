@@ -308,7 +308,7 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
 # Use column view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `glyv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Disable the warning before emptying the Trash
