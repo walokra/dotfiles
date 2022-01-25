@@ -147,6 +147,13 @@
 	# Use `hexdump` to diff binary files
 	textconv = hexdump -v -C
 
+[filter "lfs"]
+
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
 [help]
 
 	# Automatically correct and execute mistyped commands
@@ -156,6 +163,15 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+[pager]
+
+    diff = diff-so-fancy | less --tabs=1,5 -RFX
+    show = diff-so-fancy | less --tabs=1,5 -RFX
+
+[pull]
+
+	rebase = false
 
 [push]
 
@@ -185,4 +201,3 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-	
