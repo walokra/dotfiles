@@ -12,6 +12,11 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+### -------------------------- Set macOS defaults -------------------------- ###
+# https://github.com/herrbischoff/awesome-macos-command-line
+# Back up macOS default settings before changing
+defaults read >> ~/Desktop/macos-defaults.txt
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -28,13 +33,21 @@ sudo nvram SystemAudioVolume=" "
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+# Set to dark mode
+defaults write -g AppleInterfaceStyle -string "Dark"
+# Set dark/light to auto
+#defaults write -g AppleInterfaceStyleSwitchesAutomatically -bool true
+
+# Set accent color to green
+#defaults write NSGlobalDomain AppleAccentColor -int 3
+
 # Set highlight color to green
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
-# Always show scrollbars
+# Automatic show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
