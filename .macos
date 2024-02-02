@@ -128,6 +128,15 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+###############################################################################
+# Taskbar icons											                    #
+###############################################################################
+
+# Show bluetooth icon
+defaults write com.apple.controlcenter Bluetooth -int 18
+
+# Show volume icon
+defaults write com.apple.controlcenter Sound -int 18
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
